@@ -14,6 +14,8 @@
 		340287241EE771F600F5F2F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 340287221EE771F600F5F2F2 /* LaunchScreen.storyboard */; };
 		3402872F1EE771F600F5F2F2 /* CatDefenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3402872E1EE771F600F5F2F2 /* CatDefenderTests.swift */; };
 		3402873A1EE771F600F5F2F2 /* CatDefenderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340287391EE771F600F5F2F2 /* CatDefenderUITests.swift */; };
+		3402874A1EE77FE100F5F2F2 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 340287481EE77FE100F5F2F2 /* Fabric.framework */; };
+		3402874B1EE77FE100F5F2F2 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 340287491EE77FE100F5F2F2 /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		340287351EE771F600F5F2F2 /* CatDefenderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatDefenderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		340287391EE771F600F5F2F2 /* CatDefenderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDefenderUITests.swift; sourceTree = "<group>"; };
 		3402873B1EE771F600F5F2F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		340287481EE77FE100F5F2F2 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		340287491EE77FE100F5F2F2 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3402874B1EE77FE100F5F2F2 /* Crashlytics.framework in Frameworks */,
+				3402874A1EE77FE100F5F2F2 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +83,8 @@
 		3402870D1EE771F600F5F2F2 = {
 			isa = PBXGroup;
 			children = (
+				340287481EE77FE100F5F2F2 /* Fabric.framework */,
+				340287491EE77FE100F5F2F2 /* Crashlytics.framework */,
 				340287181EE771F600F5F2F2 /* CatDefender */,
 				3402872D1EE771F600F5F2F2 /* CatDefenderTests */,
 				340287381EE771F600F5F2F2 /* CatDefenderUITests */,
@@ -135,6 +143,7 @@
 				340287121EE771F600F5F2F2 /* Sources */,
 				340287131EE771F600F5F2F2 /* Frameworks */,
 				340287141EE771F600F5F2F2 /* Resources */,
+				340287471EE77FCA00F5F2F2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -193,7 +202,7 @@
 				TargetAttributes = {
 					340287151EE771F600F5F2F2 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 5Z97G9NZQ6;
+						DevelopmentTeam = R99Q64ZFMS;
 						ProvisioningStyle = Manual;
 					};
 					340287291EE771F600F5F2F2 = {
@@ -254,6 +263,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		340287471EE77FCA00F5F2F2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 32dc925284121f8215256300e1572e0b1d6460af 6804d301a19cac5931995fe140dd741b24893961b972ef68efce31ddb46ba520";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		340287121EE771F600F5F2F2 /* Sources */ = {
@@ -413,14 +438,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 5Z97G9NZQ6;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = R99Q64ZFMS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CatDefender/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = altconf.simina.CatDefender;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f21d1087-5940-4780-9f85-ea9c1feb5ed6";
-				PROVISIONING_PROFILE_SPECIFIER = "Simina Dev";
+				PROVISIONING_PROFILE = "609dc09f-2297-4609-b997-aae2e3a1361f";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc altconf.simina.CatDefender";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -429,13 +458,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5Z97G9NZQ6;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = R99Q64ZFMS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CatDefender/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = altconf.simina.CatDefender;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f21d1087-5940-4780-9f85-ea9c1feb5ed6";
-				PROVISIONING_PROFILE_SPECIFIER = "Simina Dev";
+				PROVISIONING_PROFILE = "609dc09f-2297-4609-b997-aae2e3a1361f";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc altconf.simina.CatDefender";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
